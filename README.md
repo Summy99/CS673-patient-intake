@@ -21,7 +21,7 @@
 5. Families or individuals in charge of the person with disabilities.
 # Backlog
 URL: https://www.pivotaltracker.com/n/projects/2677911
-1. Make an actual intake form.
+1. As a person with disabilities I want the intake form to be user-friendly and concise so I won't feel overwhelmed providing information..
 
 2. As an individual requiring aid for independent living, I want to be able to fill out the patient intake form
    electronically to provide my personal information and medical history.
