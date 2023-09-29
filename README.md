@@ -22,12 +22,24 @@
 # Backlog
 URL: https://www.pivotaltracker.com/n/projects/2677911
 1. Make an actual intake form.
-2. 
-3.
-4. 
-5. 
-6. 
-7. 
+
+2. As an individual requiring aid for independent living, I want to be able to fill out the patient intake form
+   electronically to provide my personal information and medical history.
+
+3. As a caregiver, I want the patient intake form to include emergency contact information for patients, in case
+   of medical emergencies.
+
+4. As a patient, I want to have the option to save my progress through the patient intake form and return to
+   complete it at a later time.
+
+5. As a patient, I want the intake form to be customizable so that I add information records specific to my
+   particular case. 
+
+6. As a caregiver, I want the intake form to present a concise summary for the patient's case.
+
+7. As a caregiver, I want the intake form to have integrated validation system that ensures that all required
+   fields are completed before submission.
+
 8.
 9.
 10.
