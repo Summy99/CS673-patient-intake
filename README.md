@@ -10,7 +10,7 @@
  Design an intake form that will gather user information and be connected to the database to store information. Do this through an interface that will allow the users to easily input and submit information. Consider implementing early stage accesibility features for users. Add a document upload feature for medical records or required documents. Work on grouping users based on disabilites to refer them to matching providers. 
 # Stakeholder Types
 1. [Clients]
-2. [Providers]
+2. [Providers] 
 3. [Government Agencies]
 
 # User Persona
@@ -40,9 +40,11 @@ URL: https://www.pivotaltracker.com/n/projects/2677911
 7. As a caregiver, I want the intake form to have integrated validation system that ensures that all required
    fields are completed before submission.
 
-8.
-9.
-10.
+8. As a person with language barriers and has a need for multi-language support I want the intake form to be available in multiple languages so I can comfortably provide informatiom.
+
+9. As a provider, I want to receive real-time notifications when a patient is referred to me.
+
+10. As a government agency, I want the system to generate and provide reports so I can monitor the effectiveness of the program to allocate resources accordingly. 
 
 Rationale:
 
