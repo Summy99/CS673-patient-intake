@@ -48,7 +48,9 @@ URL: https://www.pivotaltracker.com/n/projects/2677911
  
 10. As a patient with color vision deficiency, I want the patient intake portal have an option to change visual themes so that I can traverse the form with ease. - Value = 1
 
-Rationale: We prioritize Story1 because accesibility and experience is extremely crucial, especially for individuals with disabilities, to ensure inclusivity and usability for people from a broad spectrum.
+# Rationale: 
+
+We prioritize Story1 because accesibility and experience is extremely crucial, especially for individuals with disabilities, to ensure inclusivity and usability for people from a broad spectrum.
 
 Story 2 addresses the crux of the patient intake portal, allowing users to provide vital information electronically,
 facilitating a seamless intake process for those who require aid.
@@ -75,8 +77,8 @@ to a specific/niche group of users.
 
 
 
-Definition of Ready:
+# Definition of Ready:
 
 
 
-Estimate amount of time for each backlog item in terms of story points: (Done!)
+# Estimate amount of time for each backlog item in terms of story points: (Done!)
