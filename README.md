@@ -96,3 +96,16 @@ Majority wins!
 3. At the end of first cycle, the group arrives at consensus which is the easies task to implement. This task is treated as reference task and is assigned a value of 1 point. All the other tasks are required to be estimated as an integral multiple of this reference baseline easiest task.
 
 4. Then another group member takes the role of arbitrator for next round and the group follows the same procedure for the fraction of the backlog that has not been estimated yet.
+
+
+# Definition of Ready
+
+Sprint 1 : Patient Intake Portal
+
+User Story Opening Sentence Structure : As a [Type of User] I want/need [feature], so that [benifit/goal].
+
+Estimated Story Point Value = 13 story points
+
+Acceptance criteria for story : 
+1. A user story should be axiomatic in conveying what it requires to be implemented.
+2. A user story should correspond to only one primitive/atomic feature.
