@@ -21,7 +21,7 @@
 5. Families or individuals in charge of the person with disabilities.
 # Backlog
 URL: https://www.pivotaltracker.com/n/projects/2677911
-1. As a person with disabilities I want the intake form to be user-friendly and concise so I won't feel overwhelmed providing information.. - Value = 1
+1. As a person with disabilities I want the intake form to be user-friendly and concise so I won't feel overwhelmed providing information. - Value = 1
 
 2. As an individual requiring aid for independent living, I want to be able to fill out the patient intake form
    electronically to provide my personal information and medical history. - Value = 1
@@ -29,7 +29,7 @@ URL: https://www.pivotaltracker.com/n/projects/2677911
 3. As a caregiver, I want the patient intake form to include emergency contact information for patients, in case
    of medical emergencies. - Value = 1
 
-4. As a caregiver, I want the intake form to have integrated validation system that ensures that all required
+4. As a caregiver, I want the intake form to have an integrated validation system that ensures that all required
    fields are completed before submission. - Value = 1
 
 5. As a caregiver, I want the intake form to present a concise summary for the patient's case. - Value = 1
@@ -37,8 +37,8 @@ URL: https://www.pivotaltracker.com/n/projects/2677911
 6. As a provider, I want to receive real-time notifications when a patient is referred to me. - Value = 1
    (i think intake portal does not own this feature, I might be wrong.)
    
-7. As a person with language barriers and has a need for multi-language support I want the intake form to be
-   available in multiple languages so I can comfortably provide informatiom. - Value = 1
+7. As a person with language barriers and who has a need for multi-language support, I want the intake form to be
+   available in multiple languages so I can comfortably provide information. - Value = 1
 
 8. As a patient, I want to have the option to save my progress through the patient intake form and return to
    complete it at a later time. Value = 3
@@ -46,22 +46,22 @@ URL: https://www.pivotaltracker.com/n/projects/2677911
 9. As a patient, I want the intake form to be customizable so that I can add information records specific to my
    particular case. - Value = 2
  
-10. As a patient with color vision deficiency, I want the patient intake portal have an option to change visual themes so that I can traverse the form with ease. - Value = 1
+10. As a patient with color blindness, I want the patient intake portal have an option to change visual themes so that I can traverse the form with ease. - Value = 1
 
 # Rationale: 
 
-We prioritize Story1 because accesibility and experience is extremely crucial, especially for individuals with disabilities, to ensure inclusivity and usability for people from a broad spectrum.
+We prioritize Story 1 because accesibility and experience is extremely crucial, especially for individuals with disabilities, to ensure inclusivity and usability for people from a broad spectrum.
 
 Story 2 addresses the crux of the patient intake portal, allowing users to provide vital information electronically,
 facilitating a seamless intake process for those who require aid.
 
-Story 3 is prioritized next since safety and immediate medical care in case of emergencies being critical concerns, should be addressed early in the development process.
+Story 3 is prioritized next. Safety and immediate medical care in case of emergencies being critical concerns, they should be addressed early in the development process.
 
 Story 4 is up next because data accuracy and completeness are important for providing care to individuals in requirement of aid for achieving independent living.
 
 Story 4 is follwed by Story 5 because, to ensure proper and efficient delivery of care/assistance it is crucial that caregivers are provided with a concise summary of the case.
 
-Story 6 : Prompt communication between the patient and caregiver is vital for seamless patient care delivery making
+Story 6 : Prompt communication between the patient and caregiver is vital for seamless patient care delivery, making
 making this one of the core functionalities. 
 
 Story 7 : Having multilingual support is important for inclusivity for individuals with language barriers, however
