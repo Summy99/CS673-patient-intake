@@ -9,9 +9,9 @@
 # Near Vision
  Design an intake form that will gather user information and be connected to the database to store information. Do this through an interface that will allow the users to easily input and submit information. Consider implementing early stage accesibility features for users. Add a document upload feature for medical records or required documents. Work on grouping users based on disabilites to refer them to matching providers. 
 # Stakeholder Types
-1. [Clients]
-2. [Providers] 
-3. [Government Agencies]
+1. Clients
+2. Providers
+3. Government Agencies
 
 # User Persona
 1. People with disabilities (wheelchairs, etc) who can't get around with their own transportation.
