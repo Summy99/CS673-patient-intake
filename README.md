@@ -21,30 +21,30 @@
 5. Families or individuals in charge of the person with disabilities.
 # Backlog
 URL: https://www.pivotaltracker.com/n/projects/2677911
-1. As a person with disabilities I want the intake form to be user-friendly and concise so I won't feel overwhelmed providing information..
+1. As a person with disabilities I want the intake form to be user-friendly and concise so I won't feel overwhelmed providing information.. - Value = 1
 
 2. As an individual requiring aid for independent living, I want to be able to fill out the patient intake form
-   electronically to provide my personal information and medical history.
+   electronically to provide my personal information and medical history. - Value = 1
 
 3. As a caregiver, I want the patient intake form to include emergency contact information for patients, in case
-   of medical emergencies.
+   of medical emergencies. - Value = 1
 
 4. As a patient, I want to have the option to save my progress through the patient intake form and return to
-   complete it at a later time.
+   complete it at a later time. Value = 3
 
-5. As a patient, I want the intake form to be customizable so that I add information records specific to my
-   particular case. 
+5. As a patient, I want the intake form to be customizable so that I can add information records specific to my
+   particular case. - Value = 2
 
-6. As a caregiver, I want the intake form to present a concise summary for the patient's case.
+6. As a caregiver, I want the intake form to present a concise summary for the patient's case. - Value = 1
 
 7. As a caregiver, I want the intake form to have integrated validation system that ensures that all required
-   fields are completed before submission.
+   fields are completed before submission. - Value = 1
 
-8. As a person with language barriers and has a need for multi-language support I want the intake form to be available in multiple languages so I can comfortably provide informatiom.
+8. As a person with language barriers and has a need for multi-language support I want the intake form to be available in multiple languages so I can comfortably provide informatiom. - Value = 1
 
-9. As a provider, I want to receive real-time notifications when a patient is referred to me.
+9. As a provider, I want to receive real-time notifications when a patient is referred to me. - Value = (pitch in here I have no clue)
 
-10. As a government agency, I want the system to generate and provide reports so I can monitor the effectiveness of the program to allocate resources accordingly. 
+10. As a government agency, I want the system to generate and provide reports so I can monitor the effectiveness of the program to allocate resources accordingly. - Value = (Help!!)
 
 Rationale:
 
