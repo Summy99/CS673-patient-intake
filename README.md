@@ -81,4 +81,18 @@ to a specific/niche group of users.
 
 
 
-# Estimate amount of time for each backlog item in terms of story points: (Done!)
+# Team relative size estimating activity:
+
+# "Greedy Sort" for estimating relative size
+
+As a team we decided to follow a Greedy approach activity to estimate the relative size of features to be implemented.
+The activity goes as follows:
+
+1. Initially a group member out of 4 is chosen at random to serve as an arbitrator who decides in what order we iterate over the backlog features, however this arbitrator does not get to vote in the current round.
+
+2. Arbitrator selects a feature at random and asks the other 3 group members to vote if they think the feature is easier to implement compared to all the other features from the "unsorted" fraction of the backlog items.
+Majority wins!
+
+3. At the end of first cycle, the group arrives at consensus which is the easies task to implement. This task is treated as reference task and is assigned a value of 1 point. All the other tasks are required to be estimated as an integral multiple of this reference baseline easiest task.
+
+4. Then the arbitrator is swapped and the group follows the same procedure for the fraction of the backlog that has not been estimated yet.
