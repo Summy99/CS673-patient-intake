@@ -42,9 +42,10 @@ URL: https://www.pivotaltracker.com/n/projects/2677911
 
 8. As a person with language barriers and has a need for multi-language support I want the intake form to be available in multiple languages so I can comfortably provide informatiom. - Value = 1
 
-9. As a provider, I want to receive real-time notifications when a patient is referred to me. - Value = (pitch in here I have no clue)
+9. As a provider, I want to receive real-time notifications when a patient is referred to me. - Value = 1
 
-10. As a government agency, I want the system to generate and provide reports so I can monitor the effectiveness of the program to allocate resources accordingly. - Value = (Help!!)
+10. As a patient with color vision deficiency, I want the patient intake portal have an option to change visual themes so that I can traverse the form with ease. - Value = 1
+   (Replaced previous story)As a government agency, I want the system to generate and provide reports so I can monitor the effectiveness of the program to allocate resources accordingly. - Value = (Help!!)
 
 Rationale:
 
