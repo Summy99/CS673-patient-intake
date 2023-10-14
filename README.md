@@ -102,7 +102,7 @@ Majority wins!
 
 Sprint 1 : Patient Intake Portal
 
-User Story Opening Sentence Structure : As a [Type of User] I want/need [feature], so that [benifit/goal].
+User Story Opening Sentence Structure : As a [Type of User] I want/need [feature], so that [benefit/goal].
 
 Estimated Story Point Value = 13 story points
 
