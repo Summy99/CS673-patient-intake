@@ -4,11 +4,11 @@
     <div>
         <h2>Personal Information</h2>
         <%= form.label :first_name %>
-        <%= form.text_field :first_name %>
+        <%= form.text_field :first_name %> <br />
         <%= form.label :middle_name %>
-        <%= form.text_field :middle_name %>
+        <%= form.text_field :middle_name %> <br />
         <%= form.label :last_name %>
-        <%= form.text_field :last_name %> <br />
+        <%= form.text_field :last_name %> <br /> <br />
         <%= form.label :gender %>
         <%= form.select :gender, ['Male', 'Female', 'Other'] %> <br />
         <%= form.label :dob %>
@@ -22,10 +22,11 @@
         <%= form.label :phone_number %>
         <%= form.text_field :phone_number %> <br />
         <%= form.label :email %>
-        <%= form.text_field :email %>
+        <%= form.text_field :email %> <br />
     </div>
 
     <div>
+        <br />
         <%= form.submit %> 
     </div>
 <% end %>
