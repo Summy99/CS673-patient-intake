@@ -1,0 +1,32 @@
+<h1>Patient Intake</h1>
+
+<%= form_with model: @patient do |form| %>
+    <div>
+        <h2>Personal Information</h2>
+        <%= form.label :first_name %>
+        <%= form.text_field :first_name %>
+        <%= form.label :middle_name %>
+        <%= form.text_field :middle_name %>
+        <%= form.label :last_name %>
+        <%= form.text_field :last_name %> <br />
+        <%= form.label :gender %>
+        <%= form.select :gender, ['Male', 'Female', 'Other'] %> <br />
+        <%= form.label :dob %>
+        <%= form.date_field :dob %> <br />
+        <%= form.label :ssn %>
+        <%= form.number_field :ssn %>
+    </div>
+
+    <div>
+        <h2>Contact Information</h2>
+        <%= form.label :phone_number %>
+        <%= form.text_field :phone_number %> <br />
+        <%= form.label :email %>
+        <%= form.text_field :email %>
+    </div>
+
+    <div>
+        <%= form.submit %> 
+    </div>
+<% end %>
+
