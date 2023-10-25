@@ -3,7 +3,10 @@
 <dl>
     <% @patients.each do |patient| %>
         <dt><%= patient.first_name + " " + patient.last_name %></dt>
-        <dd><%= "Age: " + age(patient.id).to_s %></dd>
+        <dd><%= "Age: " + age(patient.id).to_s %> <br /> 
+        <%= link_to "Delete Patient", { controller: "patients", action: "destroy", id: patient.id }, data: {
+            confirm: "Are you sure you want to delete #{patient.first_name} #{patient.last_name}?"
+        }, method: :delete %> <br /> <br /></dd>
     <% end %>
 </dl>
 

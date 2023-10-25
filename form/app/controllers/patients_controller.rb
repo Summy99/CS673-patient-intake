@@ -20,6 +20,17 @@ class PatientsController < ApplicationController
     end
   end
 
+  def show
+    @patient = Patient.find(params[:id])
+  end
+
+  def destroy
+    @patient = Patient.find(params[:id])
+    @patient.destroy
+
+    redirect_to root_path
+  end
+
   def age(id) # Method that calculates the age of the patient
     now = Date.today
     patient = Patient.find(id)
