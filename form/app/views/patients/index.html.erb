@@ -1,2 +1,9 @@
-<h1>Patients#index</h1>
-<p>Find me in app/views/patients/index.html.erb</p>
+<h1>All Patients</h1>
+
+<dl>
+    <% @patients.each do |patient| %>
+        <dt><%= patient.first_name + " " + patient.last_name %></dt>
+        <dd><%= "Age: " + age(patient.id).to_s %></dd>
+    <% end %>
+</dl>
+
