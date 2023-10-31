@@ -4,10 +4,9 @@
     <% @patients.each do |patient| %>
         <dt><%= patient.first_name + " " + patient.last_name %></dt>
         <dd><%= "Age: " + age(patient.id).to_s %> <br /> 
-        <%= link_to "Delete Patient", patient_path(patient), data: {
-            turbo_method: :delete,
-            turbo_confirm: "Are you sure you want to permanently delete this patient?"
-        } %> <br /> <br /></dd>
+    <%= link_to "Delete Patient", patient_path(patient), method: :delete, data: {
+    confirm: "Are you sure you want to permanently delete this patient?"
+    }%><br /> <br /></dd>
     <% end %>
 </dl>
 

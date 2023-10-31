@@ -28,15 +28,20 @@ class PatientsController < ApplicationController
     @patient = Patient.find(params[:id])
     @patient.destroy
 
-    redirect_to root_path
+    redirect_to root_path, notice: "Patient deleted successfully"
   end
 
   def age(id) # Method that calculates the age of the patient
     now = Date.today
     patient = Patient.find(id)
-    age = now.year - patient.dob.year
-    age -= 1 if now < Date.new(now.year, patient.dob.month, patient.dob.day)
-    return age
+    #catch Nil value when calculating age, check that patient and patient.dob are not Nil
+    if patient && patient.dob
+      age = now.year - patient.dob.year
+      age -= 1 if now <Date.new(now.year, patient.dob.month, patient.dob.day)
+      return age
+    else
+      return "N/A"
+    end
   end
 
   helper_method :age # Makes the age method available to the view
