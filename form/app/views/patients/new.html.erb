@@ -1,33 +1,48 @@
-<h1>Patient Intake</h1>
+<style>
+  .intake-form {
+    display: flex;
+    justify-content: center;
+  }
+
+  .intake-step {
+    margin: 20px; /* Add some spacing between steps */
+    padding: 20px;
+    border: 1px solid #ccc; /* Add a border for visual separation */
+  }
+</style>
+
+<h1 class="intake-form">Patient Intake</h1>
 
 <%= form_with model: @patient do |form| %>
-    <div>
-        <h2>Personal Information</h2>
-        <%= form.label :first_name %>
-        <%= form.text_field :first_name %> <br />
-        <%= form.label :middle_name %>
-        <%= form.text_field :middle_name %> <br />
-        <%= form.label :last_name %>
-        <%= form.text_field :last_name %> <br /> <br />
-        <%= form.label :gender %>
-        <%= form.select :gender, ['Male', 'Female', 'Other'] %> <br />
-        <%= form.label :dob %>
-        <%= form.date_field :dob %> <br />
-        <%= form.label :ssn %>
-        <%= form.number_field :ssn %>
-    </div>
+    <div class="intake-form">
+        <div class="intake-step">
+            <h2>Personal Information</h2>
+            <%= form.label :first_name %>
+            <%= form.text_field :first_name %> <br />
+            <%= form.label :middle_name %>
+            <%= form.text_field :middle_name %> <br />
+            <%= form.label :last_name %>
+            <%= form.text_field :last_name %> <br /> <br />
+            <%= form.label :gender %>
+            <%= form.select :gender, ['Male', 'Female', 'Other'] %> <br />
+            <%= form.label :dob %>
+            <%= form.date_field :dob %> <br />
+            <%= form.label :ssn %>
+            <%= form.number_field :ssn %>
+        </div>
 
-    <div>
-        <h2>Contact Information</h2>
-        <%= form.label :phone_number %>
-        <%= form.text_field :phone_number %> <br />
-        <%= form.label :email %>
-        <%= form.text_field :email %> <br />
-    </div>
+        <div class="intake-step">
+            <h2>Contact Information</h2>
+            <%= form.label :phone_number %>
+            <%= form.text_field :phone_number %> <br />
+            <%= form.label :email %>
+            <%= form.text_field :email %> <br />
+        </div>
 
-    <div>
-        <br />
-        <%= form.submit %> 
+        <div class="intake-step">
+            <br />
+            <%= form.submit %> 
+        </div>
     </div>
 <% end %>
-
+</div>
