@@ -97,6 +97,8 @@ GEM
     mini_mime (1.1.5)
     minitest (5.20.0)
     msgpack (1.7.2)
+    mustermann (1.1.2)
+      ruby2_keywords (~> 0.0.1)
     net-imap (0.4.3)
       date
       net-protocol
@@ -115,6 +117,10 @@ GEM
       nio4r (~> 2.0)
     racc (1.7.2)
     rack (2.2.8)
+    rack-cors (2.0.1)
+      rack (>= 2.0.0)
+    rack-protection (2.1.0)
+      rack
     rack-test (2.1.0)
       rack (>= 1.3)
     rails (7.0.8)
@@ -150,9 +156,16 @@ GEM
       psych (>= 4.0.0)
     reline (0.3.9)
       io-console (~> 0.5)
+    ruby2_keywords (0.0.5)
+    sinatra (2.1.0)
+      mustermann (~> 1.0)
+      rack (~> 2.2)
+      rack-protection (= 2.1.0)
+      tilt (~> 2.0)
     sqlite3 (1.6.8-x64-mingw-ucrt)
     stringio (3.0.8)
     thor (1.3.0)
+    tilt (2.3.0)
     timeout (0.4.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
@@ -170,7 +183,9 @@ DEPENDENCIES
   bootsnap
   debug
   puma (~> 5.0)
+  rack-cors
   rails (~> 7.0.8)
+  sinatra (~> 2.1.0)
   sqlite3 (~> 1.4)
   tzinfo-data
 
