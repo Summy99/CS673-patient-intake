@@ -136,6 +136,8 @@ GEM
       racc (~> 1.4)
     nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
+    pg (1.5.4)
+    pg (1.5.4-x64-mingw-ucrt)
     psych (4.0.4)
       stringio
     public_suffix (5.0.3)
@@ -243,6 +245,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   jquery-rails
+  pg
   puma (~> 5.0)
   rails (~> 7.0.8)
   sassc-rails
