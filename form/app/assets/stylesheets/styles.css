@@ -1,0 +1,46 @@
+/* styles.css */
+
+/* Global Styling */
+body {
+    background-color: #ffffff; /* White background for the entire page */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Viewport height */
+    margin: 0;
+  }
+  
+  /* Form Styling */
+  .form-container {
+    background-color: #56941E; /* Maximum Green background for the form container */
+    border-radius: 10px;
+    padding: 20px;
+    width: 60%; /* 2/3 of the screen width */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+    border: 8px solid #471871; /* Medium-sized purple border */
+  }
+  
+  .form-title {
+    color: #94C773; /* Pistachio color for the form title */
+    font-weight: bold;
+    font-size: 10vh;
+    margin-bottom: 10px;
+  }
+  
+  .form-divider {
+    border-top: 4px dotted #471871; /* Blue-Violet Color Wheel dotted line between form title and intake fields */
+    margin-bottom: 20px;
+  }
+  
+  /* Intake Field Styling */
+  .intake-field {
+    background-color: #ffffff; /* White background for intake fields */
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .field-name {
+    color: #471871; /* Updated to Blue-Violet Color Wheel for field name */
+  }
+  
