@@ -20,8 +20,8 @@ test:
   database: C:\Users\sinri\Downloads\Fall 2023 Classes\Software Design and Production Methodology\CS673-patient-intake\form\db\development.sqlite3
 
 production:
-  <<: *default
-  database: C:\Users\sinri\Downloads\Fall 2023 Classes\Software Design and Production Methodology\CS673-patient-intake\form\db\development.sqlite3
+  url: <%= ENV['DATABASE_URL'] %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
