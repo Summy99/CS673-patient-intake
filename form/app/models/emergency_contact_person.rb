@@ -7,10 +7,14 @@ class EmergencyContactPerson < ApplicationRecord
   has_many :aux_email_ids, foreign_key: "contact_person_ssn", primary_key: "contact_person_ssn", dependent: :destroy
 
   # Validations
-  validates :first_name, presence: true
-  validates :last_name, presence: true
+  accepts_nested_attributes_for :aux_contact_numbers, allow_destroy: true
+  accepts_nested_attributes_for :aux_email_ids, allow_destroy: true
+
+  validates :contact_person_ssn, presence: true, uniqueness: true, format: { with: /\A\d{9}\z/, message: "must be 9 digits" }, length: { is: 9 }
+  validates :first_name, presence: true, format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters" }
+  validates :last_name, format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters" }
   validates :dob, presence: true
-  validates :age, presence: true, numericality: { only_integer: true, greater_than: 0 }
+  validates :age, numericality: { only_integer: true, greater_than: 0 }
   validates :relationship, presence: true
   validates :street, presence: true
   validates :city, presence: true

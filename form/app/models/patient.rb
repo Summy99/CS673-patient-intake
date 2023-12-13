@@ -1,7 +1,7 @@
 class Patient < ApplicationRecord
     has_many :contact_numbers, foreign_key: "patient_ssn", primary_key: "ssn", inverse_of: :patient
     has_many :email_addresses, foreign_key: "patient_ssn", primary_key: "ssn", inverse_of: :patient
-    has_many :emergency_contact_people, foreign_key: "contact_person_ssn", primary_key: "ssn", inverse_of: :patient
+    has_many :emergency_contact_people, foreign_key: "contact_person_ssn", primary_key: "ssn", inverse_of: :patient, dependent: :destroy
     has_many :medical_histories, foreign_key: "patient_ssn", primary_key: "ssn", inverse_of: :patient
     has_many :treatments, foreign_key: "patient_ssn", primary_key: "ssn", inverse_of: :patient
     has_many :medications, foreign_key: "patient_ssn", primary_key: "ssn", inverse_of: :patient
@@ -9,6 +9,7 @@ class Patient < ApplicationRecord
     # Validations
     accepts_nested_attributes_for :contact_numbers, allow_destroy: true
     accepts_nested_attributes_for :email_addresses, allow_destroy: true
+    accepts_nested_attributes_for :emergency_contact_people, allow_destroy: true
 
     validates :ssn, presence: true, uniqueness: true, format: { with: /\A\d{9}\z/, message: "must be 9 digits" }, length: { is: 9 }
 

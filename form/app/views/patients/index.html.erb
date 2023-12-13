@@ -1,13 +1,105 @@
+<!-- patients/index.html.erb -->
+
 <h1>All Patients</h1>
 
-<dl>
-    <% @patients.each do |patient| %>
-        <dt><%= patient.first_name + " " + patient.last_name %></dt>
-        <dd><%= "Age: " + age(patient.dob).to_s %> <br /> 
-    <%= link_to "Delete Patient", patient_path(patient), method: :delete, data: {
-    confirm: "Are you sure you want to permanently delete this patient?"
-    }%><br /> <br /></dd>
-    <% end %>
-</dl>
+<div class="patient-cards">
+  <% @patients.each do |patient| %>
+    <div class="patient-card" data-patient-id="<%= patient.id %>">
+      <h3><%= patient.first_name + " " + patient.last_name %></h3>
+      <p>Age: <%= age(patient.dob).to_s %></p>
+      <%= link_to "Delete Patient", patient_path(patient), method: :delete, data: {
+        confirm: "Are you sure you want to permanently delete this patient?"
+      } %>
+    </div>
+  <% end %>
+</div>
 
 <a><%= link_to 'New Patient', new_patient_path %></a>
+
+<!-- Modal for displaying patient details -->
+<div class="modal" id="patientDetailsModal">
+  <div class="modal-content" id="patientDetailsContent"></div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const patientCards = document.querySelectorAll('.patient-card');
+    const modal = document.getElementById('patientDetailsModal');
+    const modalContent = document.getElementById('patientDetailsContent');
+
+    patientCards.forEach(card => {
+      card.addEventListener('click', function () {
+        const patientId = this.dataset.patientId;
+
+        // Fetch patient details from the server and display them in the modal
+        fetch(`/patients/${patientId}`)
+          .then(response => response.text())
+          .then(data => {
+            modalContent.innerHTML = data;
+            modal.style.display = 'block';
+          });
+      });
+
+      card.addEventListener('mouseover', function () {
+        this.style.backgroundColor = '#e0e0e0'; // Change color on hover
+      });
+
+      card.addEventListener('mouseout', function () {
+        this.style.backgroundColor = ''; // Revert to default color on mouseout
+      });
+    });
+
+    // Close the modal when clicking outside the content
+    window.addEventListener('click', function (event) {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+        modalContent.innerHTML = ''; // Clear modal content
+      }
+    });
+  });
+</script>
+<style>
+  .patient-cards {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .patient-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    background-color: #74B652; /* Default background color */
+    color: #ffffff; /* Default text color */
+  }
+
+  .patient-card:hover {
+    background-color: #6F33A6; /* Updated hovered background color */
+    border-color: #6F33A6; /* Updated hovered border color */
+    color: #000000; /* Hovered text color */
+  }
+
+  /* Styles for the modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 8px;
+  }
+</style>
