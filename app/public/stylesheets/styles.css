@@ -1,0 +1,107 @@
+/* styles.css */
+
+/* Global Styling */
+body {
+    background-color: #ffffff; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    margin: 0;
+  }
+  
+  /* Form Styling */
+  .form-container {
+    background-color: #56941E; 
+    border-radius: 10px;
+    padding: 20px;
+    width: 60%; 
+    height: 60%;
+    box-sizing: border-box; 
+    border: 8px solid #471871; 
+  }
+  
+  .form-title {
+    color: #94C773; 
+    font-weight: bold;
+    font-size: 10vh;
+    margin-bottom: 10px;
+  }
+  
+  .form-divider {
+    border-top: 4px dotted #471871; 
+    margin-bottom: 20px;
+  }
+  
+  /* Intake Field Styling */
+  .intake-field {
+    background-color: #ffffff; 
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .field-name {
+    color: #471871; 
+  }
+  
+  /* Button Styling */
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .button,
+  .search-input {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover,
+  .search-input:hover {
+    background-color: #7B52AE;
+  }
+  
+  .next-button,
+  .previous-button {
+    background-color: #74B652;
+    color: #ffffff;
+  }
+  
+  /* Search Bar Styling */
+  .search-bar {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .search-input {
+    border-radius: 5px;
+    padding: 8px;
+    margin-right: 10px;
+    width: calc(100% + 2vw);
+    height: calc(100% + 2vh);
+  }
+  
+  /* Bottom Buttons Styling */
+  .bottom-buttons {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .bottom-left {
+    /* Add any specific styling for the bottom-left button */
+  }
+  
+  .bottom-right {
+    /* Add any specific styling for the bottom-right button */
+  }
+  
+  

@@ -1,2 +1,41 @@
-/form/tmp/*
-/form/log/*
+# .gitignore
+
+# Ignore bundler config.
+/.bundle
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/db/*.sqlite3-wal
+
+# Ignore the database config.
+/config/database.yml
+
+# Ignore logs and temp files.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore environment files.
+/.env
+
+# Ignore Mac and Linux file system files
+.DS_Store
+Thumbs.db
+
+# Ignore the public directory (it will be created on deploy)
+/public/system
+/public/uploads
+
+# Ignore the node_modules directory
+/node_modules
+
+# Ignore yarn error logs
+/yarn-error.log
+
+# Ignore the .byebug_history file
+/.byebug_history
+
+# Ignore the .vscode directory
+/.vscode

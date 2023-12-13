@@ -1,3 +1,0 @@
-class Patient < ApplicationRecord
-
-end

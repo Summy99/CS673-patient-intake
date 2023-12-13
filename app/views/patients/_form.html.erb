@@ -1,0 +1,91 @@
+<!-- app/views/patients/_form.html.erb -->
+
+<%= form_with(model: patient, local: true) do |form| %>
+  <% if patient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+
+      <ul>
+        <% patient.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-container">
+    <h1 class="form-title">Patient Information</h1>
+    <div class="form-divider"></div>
+
+    <!-- Intake Fields -->
+    <div class="intake-field">
+      <%= form.label :first_name, class: "field-name" %>
+      <%= form.text_field :first_name, class: "input-field", placeholder: "Enter First Name" %>
+    </div>
+
+    <div class="intake-field">
+      <%= form.label :last_name, class: "field-name" %>
+      <%= form.text_field :last_name, class: "input-field", placeholder: "Enter Last Name" %>
+    </div>
+
+    <div class="intake-field">
+      <%= form.label :dob, class: "field-name" %>
+      <%= form.date_field :dob, class: "input-field" %>
+    </div>
+
+    <div class="intake-field">
+      <%= form.label :ssn, class: "field-name" %>
+      <%= form.text_field :ssn, class: "input-field", placeholder: "XXX-XX-XXXX" %>
+    </div>
+
+    <div class="intake-field">
+      <%= form.label :phone_number, class: "field-name" %>
+      <%= form.text_field :phone_number, class: "input-field", placeholder: "Enter Phone Number" %>
+    </div>
+
+    <div class="intake-field">
+      <%= form.label :address, class: "field-name" %>
+      <%= form.text_field :address, class: "input-field", placeholder: "Enter Address" %>
+    </div>
+
+    <div class="intake-field">
+      <%= form.label :city, class: "field-name" %>
+      <%= form.text_field :city, class: "input-field", placeholder: "Enter City" %>
+    </div>
+
+    <div class="intake-field">
+      <%= form.label :state, class: "field-name" %>
+      <%= form.select :state, options_for_select(["Alabama", "Alaska", ...]), {}, class: "input-field" %>
+    </div>
+
+    <div class="intake-field">
+      <%= form.label :zip_code, class: "field-name" %>
+      <%= form.text_field :zip_code, class: "input-field", placeholder: "Enter Zip Code" %>
+    </div>
+
+    <div class="intake-field">
+      <%= form.label :disability_type, class: "field-name" %>
+      <%= form.select :disability_type, options_for_select(["Hospice", "Assisted Living", "Memory Care", "Skilled Nursing", "Retirement Community"]), {}, class: "input-field" %>
+    </div>
+
+    <div class="intake-field">
+      <%= form.label :race, class: "field-name" %>
+      <%= form.select :race, options_for_select(["Race 1", "Race 2", "Race 3", ...]), {}, class: "input-field" %>
+    </div>
+
+    <div class="intake-field">
+      <%= form.label :ethnicity, class: "field-name" %>
+      <%= form.text_field :ethnicity, class: "input-field", placeholder: "Enter Ethnicity" %>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="button-container top-center">
+      <%= form.submit "Save", class: "next-button" %>
+    </div>
+
+    <!-- Home Button -->
+    <div class="button-container top-center">
+      <%= link_to "Home", dashboard_index_path, class: "next-button" %>
+    </div>
+  </div>
+<% end %>

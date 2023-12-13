@@ -1,0 +1,68 @@
+<!-- app/views/dashboard/index.html.erb -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <%= stylesheet_link_tag 'styles' %>
+</head>
+<body>
+
+<div class="form-container">
+  <h1 class="form-title">Dashboard</h1>
+  <div class="form-divider"></div>
+
+  <!-- Display Patients -->
+  <h2>Patients</h2>
+
+  <% if current_user.admin? %>
+    <!-- Display all patients for admin -->
+    <% @patients.each do |patient| %>
+      <div class="patient-card">
+        <div class="patient-box">
+          <p class="field-name">Name: <%= "#{patient.first_name} #{patient.last_name}" %></p>
+        </div>
+        <div class="button-container">
+          <%= link_to "View", patient_path(patient), class: "next-button" %>
+          <%= link_to "Edit", edit_patient_path(patient), class: "next-button" %>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <!-- Display assigned patients for regular users -->
+    <% @patients.each do |patient| %>
+      <div class="patient-card">
+        <div class="patient-box">
+          <p class="field-name">Name: <%= "#{patient.first_name} #{patient.last_name}" %></p>
+        </div>
+        <div class="button-container">
+          <%= link_to "View", patient_path(patient), class: "next-button" %>
+          <%= link_to "Edit", edit_patient_path(patient), class: "next-button" %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+  <!-- Top Search Bar -->
+  <div class="search-bar">
+    <%= form_tag show_path, method: :get do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search", class: "search-input" %>
+      <%= submit_tag "Search", class: "search-button" %>
+    <% end %>
+  </div>
+
+  <!-- Bottom Left and Right Buttons -->
+  <div class="bottom-buttons">
+    <button class="previous-button bottom-left">Previous</button>
+    <button class="next-button bottom-right">Next</button>
+  </div>
+
+  <!-- Top Buttons -->
+  <div class="button-container top-buttons">
+    <%= link_to "New", new_patient_path, class: "next-button" %>
+  </div>
+
+</div>
+
+</body>
+</html>
