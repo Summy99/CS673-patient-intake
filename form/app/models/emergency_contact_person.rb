@@ -2,7 +2,7 @@
 
 class EmergencyContactPerson < ApplicationRecord
   # Associations
-  belongs_to :patient, foreign_key: "patient_id", primary_key: "ssn"
+  belongs_to :patient, foreign_key: "contact_person_ssn", primary_key: "ssn"
   has_many :aux_contact_numbers, foreign_key: "contact_person_ssn", primary_key: "contact_person_ssn", dependent: :destroy
   has_many :aux_email_ids, foreign_key: "contact_person_ssn", primary_key: "contact_person_ssn", dependent: :destroy
 
