@@ -1,56 +1,144 @@
 <style>
+  body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+  }
+
   .intake-form {
     display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
     justify-content: center;
+    margin-top: 20px;
   }
 
   .intake-step {
-    margin: 20px; /* Add some spacing between steps */
-    padding: 20px;
-    border: 1px solid #ccc; /* Add a border for visual separation */
+    flex: 1; /* Equal width for each intake step */
+    margin: 0 10px; /* Add some spacing between intake steps */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    height: 300px; /* Set a fixed height for the container */
+    overflow: auto; /* Add scroll if content overflows */
+  }
+
+  .notice {
+    color: #d8000c;
+    background-color: #ffd2d2;
+    padding: 10px;
+    border: 1px solid #d8000c;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+
+  .intake-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .field-label {
+    margin-top: 10px;
+    display: block;
+  }
+
+  .alert {
+    color: red;
+    margin-top: 5px;
+    font-size: 14px; /* Adjusted font size for error reports */
+  }
+
+  .button-container {
+    flex: 1; /* Take full width */
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .button:hover {
+    background-color: #7B52AE;
+  }
+
+  .create-button {
+    background-color: #74B652;
+    color: #ffffff;
   }
 </style>
 
-<h1 class="intake-form">Patient Intake</h1>
+<%= notice %>
 
 <%= form_with model: @patient do |form| %>
-    <div class="intake-form">
-        <div class="intake-step">
-            <h2>Personal Information</h2>
-            <%= form.label :first_name %>
-            <%= form.text_field :first_name %> <br />
-            <%= form.label :middle_name %>
-            <%= form.text_field :middle_name %> <br />
-            <%= form.label :last_name %>
-            <%= form.text_field :last_name %> <br /> <br />
-            <%= form.label :gender %>
-            <%= form.select :gender, ['Male', 'Female', 'Other'] %> <br />
-            <%= form.label :dob %>
-            <%= form.date_field :dob %> <br />
-            <%= form.label :ssn %>
-            <%= form.number_field :ssn %>
-        </div>
-
-        <div class="intake-step">
-            <h2>Contact Numbers</h2>
-            <%= form.fields_for :contact_numbers do |contact_number_form| %>
-              <%= contact_number_form.label :number %>
-              <%= contact_number_form.text_field :number %> <br />
-            <% end %>
-        </div>
-
-        <div class="intake-step">
-          <h2> Email Addresses </h2>
-          <%= form.fields_for :email_addresses do |email_address_form| %>
-            <%= email_address_form.label :email %>
-            <%= email_address_form.text_field :email %> <br />
-          <% end %>
-        </div>
-
-        <div class="intake-step">
-            <br />
-            <%= form.submit %> 
-        </div>
+  <div class="intake-form">
+    <div class="intake-step">
+      <h2 class="intake-title">Personal Information</h2>
+      <%= display_errors(@patient, :first_name) %>
+      <%= form.label :first_name, class: 'field-label' %>
+      <%= form.text_field :first_name, value: @patient.first_name %><br>
+      <%= display_errors(@patient, :middle_name) %>
+      <%= form.label :middle_name, class: 'field-label' %>
+      <%= form.text_field :middle_name, value: @patient.middle_name %><br>
+      <%= display_errors(@patient, :last_name) %>
+      <%= form.label :last_name, class: 'field-label' %>
+      <%= form.text_field :last_name, value: @patient.last_name %><br>
+      <%= display_errors(@patient, :gender) %>
+      <%= form.label :gender, class: 'field-label' %>
+      <%= form.select :gender, ['Male', 'Female', 'Other'], selected: @patient.gender %><br>
+      <%= display_errors(@patient, :dob) %>
+      <%= form.label :dob, class: 'field-label' %>
+      <%= form.date_field :dob, value: @patient.dob %><br>
+      <%= display_errors(@patient, :ssn) %>
+      <%= form.label :ssn, class: 'field-label' %>
+      <%= form.number_field :ssn, value: @patient.ssn %><br>
     </div>
+
+    <div class="intake-step">
+      <h2 class="intake-title">Contact Numbers</h2>
+      <%= form.fields_for :contact_numbers do |contact_number_form| %>
+        <%= display_errors(contact_number_form.object, :number) %>
+        <%= contact_number_form.label :number, class: 'field-label' %>
+        <%= contact_number_form.text_field :number, value: contact_number_form.object.number %><br>
+      <% end %>
+    </div>
+
+    <div class="intake-step">
+      <h2 class="intake-title">Address</h2>
+      <%= display_errors(@patient, :street) %>
+      <%= form.label :street, class: 'field-label' %>
+      <%= form.text_field :street, value: @patient.street %><br>
+      <%= display_errors(@patient, :city) %>
+      <%= form.label :city, class: 'field-label' %>
+      <%= form.text_field :city, value: @patient.city %><br>
+      <%= display_errors(@patient, :state) %>
+      <%= form.label :state, class: 'field-label' %>
+      <%= form.text_field :state, value: @patient.state %><br>
+      <%= display_errors(@patient, :zip_code) %>
+      <%= form.label :zip_code, class: 'field-label' %>
+      <%= form.text_field :zip_code, value: @patient.zip_code %><br>
+    </div>
+
+    <div class="intake-step">
+      <h2 class="intake-title">Email Addresses</h2>
+      <%= form.fields_for :email_addresses do |email_address_form| %>
+        <%= display_errors(email_address_form.object, :email) %>
+        <%= email_address_form.label :email, class: 'field-label' %>
+        <%= email_address_form.text_field :email, value: email_address_form.object.email %><br>
+      <% end %>
+    </div>
+
+    <!-- Add more sections for other associations and fields as needed -->
+
+    <div class="button-container">
+      <%= form.submit "Create Patient", class: "button create-button" %>
+    </div>
+  </div>
 <% end %>
-</div>

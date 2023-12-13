@@ -12,7 +12,7 @@ class Patient < ApplicationRecord
 
     validates :first_name, presence: true, format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters" }
     validates :last_name, presence: true, format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters" }
-    validates :zip_code, presence: true, format: { with: /\A\d{5}\z/, message: "must be 5 numbers" }
+    validates :zip_code, presence: true, format: { with: /\A\d{5}\z/, message: "must be 5 digits" }
     validates :disability_type, allow_blank: true, presence: true
     validates :race, allow_blank: true, presence: true
 
