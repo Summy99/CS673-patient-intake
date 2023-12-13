@@ -32,11 +32,19 @@
         </div>
 
         <div class="intake-step">
-            <h2>Contact Information</h2>
-            <%= form.label :phone_number %>
-            <%= form.text_field :phone_number %> <br />
-            <%= form.label :email %>
-            <%= form.text_field :email %> <br />
+            <h2>Contact Numbers</h2>
+            <%= form.fields_for :contact_numbers do |contact_number_form| %>
+              <%= contact_number_form.label :number %>
+              <%= contact_number_form.text_field :number %> <br />
+            <% end %>
+        </div>
+
+        <div class="intake-step">
+          <h2> Email Addresses </h2>
+          <%= form.fields_for :email_addresses do |email_address_form| %>
+            <%= email_address_form.label :email %>
+            <%= email_address_form.text_field :email %> <br />
+          <% end %>
         </div>
 
         <div class="intake-step">

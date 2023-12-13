@@ -1,11 +1,6 @@
 require 'date'
 
-class PatientsController < ApplicationController
-  has_many :contact_numbers
-  has_many :email_addresses
-
-  accepts_nested_attributes_for :contact_numbers, allow_destroy: true
-  accepts_nested_attributes_for :email_addresses, allow_destroy: true
+class PatientsController < ApplicationController # Class that inherits from ApplicationController
 
   def index # Method that is called when idex view is rendered
     @patients = Patient.all
@@ -19,11 +14,13 @@ class PatientsController < ApplicationController
 
   def create # Method that is called when a patient is created
     @patient = Patient.new(patient_params)
-
+    @patient.contact_numbers.build unless @patient.contact_numbers.present?
+    @patient.email_addresses.build unless @patient.email_addresses.present?
     if @patient.save
       redirect_to root_path, notice: "Patient created successfully"
     else
-      render :new, status: :unprocessable_entity
+      puts @patient.errors.full_messages
+      render 'new'
     end
   end
 
