@@ -1,0 +1,11 @@
+/* show.css */
+
+body {
+    background-color: #ffffff; 
+    height: 100vh; 
+    margin: 0;
+  }
+  
+  .patient-details {
+    margin-top: 0;
+  }

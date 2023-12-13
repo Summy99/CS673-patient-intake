@@ -1,0 +1,17 @@
+<head>
+    <%= stylesheet_link_tag 'show' %>
+</head>
+
+
+<h1 class ="patient-details">Patient Details</h1>
+
+<dl>
+  <dt>Name</dt>
+  <dd><%= @patient.first_name %> <%= @patient.last_name %></dd>
+
+  <dt>SSN</dt>
+  <dd><%= @patient.ssn %></dd>
+
+  <dt>Date of Birth</dt>
+  <dd><%= @patient.dob %></dd>
+</dl>

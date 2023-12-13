@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_12_172855) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_13_204829) do
   create_table "aux_contact_numbers", force: :cascade do |t|
     t.string "contact_number"
     t.string "contact_person_ssn", null: false
@@ -94,6 +94,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_12_172855) do
     t.datetime "updated_at", null: false
     t.string "disability_type"
     t.string "goals"
+    t.integer "id"
     t.index ["ssn"], name: "index_patients_on_ssn", unique: true
   end
 
