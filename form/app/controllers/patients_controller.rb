@@ -36,23 +36,31 @@ class PatientsController < ApplicationController # Class that inherits from Appl
   end
 
   def age(id) # Method that calculates the age of the patient
-    now = Date.today
-    patient = Patient.find(id)
-    #catch Nil value when calculating age, check that patient and patient.dob are not Nil
-    if patient && patient.dob
-      age = now.year - patient.dob.year
-      age -= 1 if now <Date.new(now.year, patient.dob.month, patient.dob.day)
-      return age
-    else
-      return "N/A"
-    end
+    return if dob.blank?
+
+    today = Date.today
+    age = today.year - dob.year
+
+    # Adjust age based on the month and day
+    age -= 1 if today.month < dob.month || (today.month == dob.month && today.day < dob.day)
+
+    age
   end
 
   helper_method :age # Makes the age method available to the view
 
 
   private
-    def patient_params
-      params.require(:patient).permit(:first_name, :middle_name, :last_name, :gender, :dob, :ssn, contact_numbers_attributes: [:number], email_addresses_attributes: [:email])
-    end
+
+  def patient_params
+    params.require(:patient).permit(
+      :first_name, :middle_name, :last_name, :gender, :dob, :ssn,
+      contact_numbers_attributes: [:number, :_destroy, :id],
+      email_addresses_attributes: [:email, :_destroy, :id],
+      emergency_contact_people_attributes: [
+        :first_name, :middle_name, :last_name, :dob, :age, :relationship,
+        :address, :street, :city, :state, :zip_code, :_destroy, :id
+      ]
+    )
+  end
 end
