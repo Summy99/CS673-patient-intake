@@ -83,10 +83,45 @@ GEM
       xpath (~> 3.2)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
+    cucumber (9.1.0)
+      builder (~> 3.2, >= 3.2.4)
+      cucumber-ci-environment (~> 9.2, >= 9.2.0)
+      cucumber-core (~> 12.0)
+      cucumber-cucumber-expressions (~> 17.0)
+      cucumber-gherkin (>= 24, < 27)
+      cucumber-html-formatter (~> 20.4, >= 20.4.0)
+      cucumber-messages (>= 19, < 23)
+      diff-lcs (~> 1.5, >= 1.5.0)
+      mini_mime (~> 1.1, >= 1.1.5)
+      multi_test (~> 1.1, >= 1.1.0)
+      sys-uname (~> 1.2, >= 1.2.3)
+    cucumber-ci-environment (9.2.0)
+    cucumber-core (12.0.0)
+      cucumber-gherkin (>= 25, < 27)
+      cucumber-messages (>= 20, < 23)
+      cucumber-tag-expressions (~> 5.0, >= 5.0.4)
+    cucumber-cucumber-expressions (17.0.1)
+    cucumber-gherkin (26.2.0)
+      cucumber-messages (>= 19.1.4, < 22.1)
+    cucumber-html-formatter (20.4.0)
+      cucumber-messages (>= 18.0, < 22.1)
+    cucumber-messages (22.0.0)
+    cucumber-rails (3.0.0)
+      capybara (>= 3.11, < 4)
+      cucumber (>= 5, < 10)
+      railties (>= 5.2, < 8)
+    cucumber-tag-expressions (5.0.6)
+    database_cleaner (2.0.2)
+      database_cleaner-active_record (>= 2, < 3)
+    database_cleaner-active_record (2.1.0)
+      activerecord (>= 5.a)
+      database_cleaner-core (~> 2.0.0)
+    database_cleaner-core (2.0.1)
     date (3.3.3)
     debug (1.8.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    diff-lcs (1.5.0)
     erubi (1.12.0)
     ffi (1.16.3)
     ffi (1.16.3-x64-mingw-ucrt)
@@ -122,6 +157,7 @@ GEM
     mini_mime (1.1.5)
     minitest (5.20.0)
     msgpack (1.2.0)
+    multi_test (1.1.0)
     net-imap (0.3.7)
       date
       net-protocol
@@ -207,6 +243,8 @@ GEM
     stimulus-rails (1.2.2)
       railties (>= 6.0.0)
     stringio (3.0.8)
+    sys-uname (1.2.3)
+      ffi (~> 1.1)
     thor (1.2.2)
     tilt (2.3.0)
     timeout (0.4.0)
@@ -241,6 +279,8 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   capybara
+  cucumber-rails
+  database_cleaner
   debug
   importmap-rails
   jbuilder
