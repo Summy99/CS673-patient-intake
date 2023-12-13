@@ -10,6 +10,17 @@ class Patient < ApplicationRecord
     accepts_nested_attributes_for :contact_numbers, allow_destroy: true
     accepts_nested_attributes_for :email_addresses, allow_destroy: true
 
+    validates :first_name, presence: true, format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters" }
+    validates :last_name, presence: true, format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters" }
+    validates :zip_code, presence: true, format: { with: /\A\d{5}\z/, message: "must be 5 numbers" }
+    validates :disability_type, allow_blank: true, presence: true
+    validates :race, allow_blank: true, presence: true
+
+    validates :ethnicity, allow_blank: true, presence: true
+    validates :dob, presence: true
+    validates :street, presence: true
+    validates :city, presence: true, format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters" }
+    validates :state, presence: true
     validate :at_least_one_contact_number
     validate :at_least_one_email_address
 

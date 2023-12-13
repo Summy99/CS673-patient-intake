@@ -35,7 +35,7 @@ class PatientsController < ApplicationController # Class that inherits from Appl
     redirect_to root_path, notice: "Patient deleted successfully"
   end
 
-  def age(id) # Method that calculates the age of the patient
+  def age(dob) # Method that calculates the age of the patient
     return if dob.blank?
 
     today = Date.today
