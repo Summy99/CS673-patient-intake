@@ -10,6 +10,8 @@ class Patient < ApplicationRecord
     accepts_nested_attributes_for :contact_numbers, allow_destroy: true
     accepts_nested_attributes_for :email_addresses, allow_destroy: true
 
+    validates :ssn, presence: true, uniqueness: true, format: { with: /\A\d{9}\z/, message: "must be 9 digits" }, length: { is: 9 }
+
     validates :first_name, presence: true, format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters" }
     validates :last_name, presence: true, format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters" }
     validates :zip_code, presence: true, format: { with: /\A\d{5}\z/, message: "must be 5 digits" }
@@ -23,6 +25,7 @@ class Patient < ApplicationRecord
     validates :state, presence: true
     validate :at_least_one_contact_number
     validate :at_least_one_email_address
+
 
     private
     # Custom validation method to ensure at least one contact number for a patient

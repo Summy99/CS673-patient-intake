@@ -12,10 +12,12 @@ class PatientsController < ApplicationController # Class that inherits from Appl
     @patient.email_addresses.build
   end
 
-  def create # Method that is called when a patient is created
+  def create
     @patient = Patient.new(patient_params)
     @patient.contact_numbers.build unless @patient.contact_numbers.present?
     @patient.email_addresses.build unless @patient.email_addresses.present?
+
+    puts "Form Data: #{params.inspect}"
     if @patient.save
       redirect_to root_path, notice: "Patient created successfully"
     else
@@ -23,6 +25,7 @@ class PatientsController < ApplicationController # Class that inherits from Appl
       render 'new'
     end
   end
+
 
   def show
     @patient = Patient.find(params[:id])
@@ -49,18 +52,18 @@ class PatientsController < ApplicationController # Class that inherits from Appl
 
   helper_method :age # Makes the age method available to the view
 
-
   private
 
   def patient_params
     params.require(:patient).permit(
-      :first_name, :middle_name, :last_name, :gender, :dob, :ssn,
+      :first_name, :middle_name, :last_name, :gender, :dob, :ssn, :street, :city, :state, :zip_code,
       contact_numbers_attributes: [:number, :_destroy, :id],
       email_addresses_attributes: [:email, :_destroy, :id],
       emergency_contact_people_attributes: [
-        :first_name, :middle_name, :last_name, :dob, :age, :relationship,
+        :first_name, :last_name, :dob, :relationship,
         :address, :street, :city, :state, :zip_code, :_destroy, :id
       ]
     )
   end
+
 end
