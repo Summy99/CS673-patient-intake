@@ -56,14 +56,18 @@ class PatientsController < ApplicationController # Class that inherits from Appl
 
   def patient_params
     params.require(:patient).permit(
-      :first_name, :middle_name, :last_name, :gender, :dob, :ssn, :street, :city, :state, :zip_code,
+      :first_name,  :last_name, :gender, :dob, :ssn, :street, :city, :state, :zip_code,
       contact_numbers_attributes: [:number, :_destroy, :id],
       email_addresses_attributes: [:email, :_destroy, :id],
+
       emergency_contact_people_attributes: [
-        :first_name, :last_name, :dob, :relationship,
-        :address, :street, :city, :state, :zip_code, :_destroy, :id
+        :contact_person_ssn, :first_name, :middle_name, :last_name, :dob, :relationship,
+        :street, :city, :state, :zip_code,
+        aux_contact_numbers_attributes: [:contact_person_ssn, :number, :_destroy],
+        aux_email_ids_attributes: [:contact_person_ssn, :email_id, :_destroy]
       ]
     )
+
   end
 
 end

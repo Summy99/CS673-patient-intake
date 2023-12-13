@@ -9,6 +9,9 @@
     flex-wrap: wrap; /* Allow items to wrap to the next row */
     justify-content: center;
     margin-top: 20px;
+    max-height: 600px; /* Set a max height for the container */
+    overflow-y: auto; /* Add vertical scroll if content overflows */
+    overflow-x: auto;
   }
 
   .intake-step {
@@ -99,10 +102,6 @@
       <%= display_errors(@patient, :ssn) %>
       <%= form.label :ssn, class: 'field-label' %>
       <%= form.text_field :ssn, pattern: '\d{9}' %><br>
-
-
-
-
     </div>
 
     <div class="intake-step">
@@ -114,23 +113,21 @@
       <% end %>
     </div>
 
-<div class="intake-step">
-  <h2 class="intake-title">Address</h2>
-  <%= display_errors(@patient, :street) %>
-  <%= form.label :street, class: 'field-label' %>
-  <%= form.text_field :street, value: @patient.street %><br>
-  <%= display_errors(@patient, :city) %>
-  <%= form.label :city, class: 'field-label' %>
-  <%= form.text_field :city, value: @patient.city %><br>
-  <%= display_errors(@patient, :state) %>
-  <%= form.label :state, class: 'field-label' %>
-  <%= form.text_field :state, value: @patient.state %><br>
-  <%= display_errors(@patient, :zip_code) %>
-  <%= form.label :zip_code, class: 'field-label' %>
-  <%= form.text_field :zip_code, value: @patient.zip_code %><br>
-</div>
-
-
+    <div class="intake-step">
+      <h2 class="intake-title">Address</h2>
+      <%= display_errors(@patient, :street) %>
+      <%= form.label :street, class: 'field-label' %>
+      <%= form.text_field :street, value: @patient.street %><br>
+      <%= display_errors(@patient, :city) %>
+      <%= form.label :city, class: 'field-label' %>
+      <%= form.text_field :city, value: @patient.city %><br>
+      <%= display_errors(@patient, :state) %>
+      <%= form.label :state, class: 'field-label' %>
+      <%= form.text_field :state, value: @patient.state %><br>
+      <%= display_errors(@patient, :zip_code) %>
+      <%= form.label :zip_code, class: 'field-label' %>
+      <%= form.text_field :zip_code, value: @patient.zip_code %><br>
+    </div>
 
     <div class="intake-step">
       <h2 class="intake-title">Email Addresses</h2>
@@ -142,6 +139,7 @@
     </div>
 
     <!-- Add more sections for other associations and fields as needed -->
+    
 
     <div class="button-container">
       <%= form.submit "Create Patient", class: "button create-button" %>
