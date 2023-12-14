@@ -6,6 +6,7 @@
 
 
 require 'cucumber/rails'
+require 'rspec'
 
 # By default, any exception happening in your Rails application will bubble up
 # to Cucumber so that your scenario will fail. This is a different from how
@@ -51,3 +52,6 @@ end
 # The :transaction strategy is faster, but might give you threading problems.
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
+
+#include RSpec's matchers
+World(RSpec::Matchers)

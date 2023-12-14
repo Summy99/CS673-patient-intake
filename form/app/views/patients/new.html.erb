@@ -85,22 +85,22 @@
     <div class="intake-step">
       <h2 class="intake-title">Personal Information</h2>
       <%= display_errors(@patient, :first_name) %>
-      <%= form.label :first_name, class: 'field-label' %>
+      <%= form.label :first_name, "First Name", class: 'field-label' %>
       <%= form.text_field :first_name, value: @patient.first_name %><br>
       <%= display_errors(@patient, :middle_name) %>
-      <%= form.label :middle_name, class: 'field-label' %>
+      <%= form.label :middle_name, "Middle Name", class: 'field-label' %>
       <%= form.text_field :middle_name, value: @patient.middle_name %><br>
       <%= display_errors(@patient, :last_name) %>
-      <%= form.label :last_name, class: 'field-label' %>
+      <%= form.label :last_name, "Last Name", class: 'field-label' %>
       <%= form.text_field :last_name, value: @patient.last_name %><br>
       <%= display_errors(@patient, :gender) %>
-      <%= form.label :gender, class: 'field-label' %>
+      <%= form.label :gender, "Gender", class: 'field-label' %>
       <%= form.select :gender, ['Male', 'Female', 'Other'], selected: @patient.gender %><br>
       <%= display_errors(@patient, :dob) %>
-      <%= form.label :dob, class: 'field-label' %>
+      <%= form.label :dob, "Date of Birth", class: 'field-label' %>
       <%= form.date_field :dob, value: @patient.dob %><br>
       <%= display_errors(@patient, :ssn) %>
-      <%= form.label :ssn, class: 'field-label' %>
+      <%= form.label :ssn, "SSN", class: 'field-label' %>
       <%= form.text_field :ssn, pattern: '\d{9}' %><br>
     </div>
 
